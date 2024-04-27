@@ -1,3 +1,4 @@
+you can build it with ubuntu22.04 and g++ 9
 # octopus
 
 
