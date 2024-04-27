@@ -32,7 +32,7 @@ set(TOOLS_SRC ${PROJECT_SOURCE_DIR}/src/tools)
 # Build server
 file(GLOB_RECURSE SERVER_SRC ${FS_SRC}/*.cpp ${FS_SRC}/*.c ${NET_SRC}/*.cpp ${TOOLS_SRC}/*.cpp)
 add_executable(dmfs ${SERVER_SRC})
-target_link_libraries(dmfs Threads::Threads)
+target_link_libraries(dmfs Threads::Threads ibverbs)
 
 # Build client library
 find_package(JNI)
@@ -52,6 +52,7 @@ set (CMAKE_C_COMPILER ${MPI_C_COMPILER})
 set (CMAKE_CXX_COMPILER ${MPI_CXX_COMPILER})
 #set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -L/usr/lib64/libfuse.so")
 #set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -L/usr/local/lib/libfuse.so")
+target_link_libraries(nrfsc ibverbs fuse)
 
 link_libraries(nrfsc)
 

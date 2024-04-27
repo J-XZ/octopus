@@ -12,7 +12,7 @@
 
 using namespace std;
 
-static inline uint32_t gettid() {
+static inline uint32_t my_gettid() {
     return (uint32_t)syscall(SYS_gettid);
 }
 

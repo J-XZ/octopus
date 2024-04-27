@@ -55,7 +55,7 @@ TxManager* RPCServer::getTxManagerInstance() {
 }
 
 void RPCServer::Worker(int id) {
-	uint32_t tid = gettid();
+	uint32_t tid = my_gettid();
 	// gettimeofday(&startt, NULL);
 	Debug::notifyInfo("Worker %d, tid = %d", id, tid);
 	th2id[tid] = id;
@@ -215,7 +215,7 @@ void RPCServer::ProcessRequest(GeneralSendBuffer *send, uint16_t NodeID, uint16_
 }
 
 int RPCServer::getIDbyTID() {
-	uint32_t tid = gettid();
+	uint32_t tid = my_gettid();
 	return th2id[tid];
 }
 uint64_t RPCServer::ContractReceiveBuffer(GeneralSendBuffer *send, GeneralReceiveBuffer *recv) {
