@@ -2,7 +2,7 @@
 
 sudo apt update
 sudo apt upgrade -y
-sudo apt install -y libfuse-dev libcrypto++-dev libboost-all-dev mpi-default-dev g++ cmake default-jdk g++ librdmacm-dev
+sudo apt install -y libfuse-dev libcrypto++-dev libboost-all-dev mpi-default-dev g++ cmake default-jdk g++ librdmacm-dev libssl-dev
 sudo apt autoremove -y
 
 if grep -q "^JAVA_HOME=" /etc/environment; then
