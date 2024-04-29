@@ -11,6 +11,7 @@ void Stop (int signo) {
     _exit(0);
 }
 int main() {
+    getchar();
     signal(SIGINT, Stop);
     server = new RPCServer(2);
     char *p = (char *)server->getMemoryManagerInstance()->getDataAddress();
